@@ -1,2 +1,2 @@
 # scala-typed-queries
-An example of type safe query builder in Scala
+An example of a type-safe query builder in Scala
