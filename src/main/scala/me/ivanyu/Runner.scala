@@ -26,9 +26,14 @@ object Runner extends App {
     .build()
     .execute("'some string'", 1, false)
 
+
   // Won't work due to one implicit conversion (to tuple) is already done :(
-//  beginQuery()
-//    .addParameter[Long]("long param")
-//    .build()
-//    .execute(1)
+  case class A()
+  case class B()
+  import scala.language.implicitConversions
+  implicit def A2B(a: A): B = B()
+  beginQuery()
+    .addParameter[B]("long param")
+    .build()
+//    .execute(A())
 }
