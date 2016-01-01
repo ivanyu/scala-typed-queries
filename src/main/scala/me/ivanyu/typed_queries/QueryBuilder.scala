@@ -1,5 +1,7 @@
 package me.ivanyu.typed_queries
 
+import me.ivanyu.common.{Query, TypedParameter}
+
 import scala.reflect.ClassTag
 
 class QueryBuilder[P <: QueryParameters] private(parameters: Seq[TypedParameter]) {
@@ -10,8 +12,8 @@ class QueryBuilder[P <: QueryParameters] private(parameters: Seq[TypedParameter]
     new QueryBuilder[P#Next[T]](parameters :+ param)
   }
 
-  final def build(): Query[P] = {
-    new Query[P](parameters)
+  final def build(): Query[P#MethodParameters] = {
+    new Query[P#MethodParameters](parameters)
   }
 }
 

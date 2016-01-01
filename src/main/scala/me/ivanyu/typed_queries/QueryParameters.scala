@@ -1,21 +1,13 @@
 package me.ivanyu.typed_queries
 
+import me.ivanyu.common.Tuple0
+
 import scala.language.higherKinds
 
 // Type flags to mark query parameter set that is the last possible.
 private[typed_queries] sealed trait FinalFlag
 private[typed_queries] sealed trait NotFinal extends FinalFlag
 private[typed_queries] sealed trait Final extends FinalFlag
-
-// Empty tuple (to make it iterable as Product).
-class Tuple0 extends Product {
-  override def productElement(n: Int): Any =
-    throw new NoSuchElementException()
-  override def productArity: Int = 0
-  override def canEqual(that: Any): Boolean = false
-
-  override def toString: String = "()"
-}
 
 sealed trait QueryParameters {
   // Final flag.

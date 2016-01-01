@@ -1,4 +1,4 @@
-package me.ivanyu.typed_queries
+package me.ivanyu.common
 
 import scala.language.existentials
 import scala.reflect.ClassTag

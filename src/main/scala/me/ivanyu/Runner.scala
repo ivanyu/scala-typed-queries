@@ -1,7 +1,8 @@
 package me.ivanyu
 
 object Runner extends App {
-  import me.ivanyu.typed_queries._
+//  import me.ivanyu.typed_queries._
+  import me.ivanyu.typed_queries_shapeless._
 
   // Better, to remove deprecation warning: execute(())
   beginQuery()

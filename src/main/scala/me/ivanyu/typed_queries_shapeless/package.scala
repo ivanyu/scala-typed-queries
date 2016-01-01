@@ -4,7 +4,7 @@ import me.ivanyu.common.Tuple0
 
 import scala.language.implicitConversions
 
-package object typed_queries {
+package object typed_queries_shapeless {
   val beginQuery = QueryBuilder.begin _
 
   // Implicit conversions to make execute() and execute(value) more convenient.
